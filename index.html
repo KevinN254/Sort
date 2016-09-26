@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sort</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id = "container">
+
+	<h1>Sort Made Easy</h1>
+	<h2>Instructions</h2>
+		<ol>
+			<li>Select which sort you prefer using the radio button</li>
+			<li>Input a set of numbers in the input field</li>
+			<li>No letters or special characters accepted</li>
+			<li>Separate the numbers using a commma (,)</li>
+			<li>Make sure not to put any spaces between the numbers</li>
+			<li>Click Submit</li>
+		</ol>
+
+	<div id = "radioChoice">
+
+		BubbleSort :<input type="radio" name="userChoice" id="bubbleSortRadio"><br>
+		QuickSort  :<input type="radio" name="userChoice" id="quickSortRadio">	
+		</div>
+
+	<div id = "userChoice"> 
+
+		<input type="text" name="userInput" id="userInput">
+		<input type="submit" name="submit" id="submit" value="SUBMIT">	
+
+	</div>
+
+	<div id = "resultsDisplay">
+		
+	</div>
+	
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src ="sort.js"></script>
+<!-- <script type="text/javascript" src ="sortquick.js"></script> -->
+<script>
+</body>
+</html>
