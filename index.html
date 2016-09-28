@@ -12,7 +12,8 @@
 	<h1>Sort Made Easy</h1>
 	<h2>Instructions</h2>
 		<ol>
-			<li>Select which sort you prefer using the radio button</li>
+			<li>Select which sort you prefer using the radio button<br>
+			<strong>N.B </strong>If you don't select a sort preference it is set to do a QuickSort on default</li>
 			<li>Input a set of numbers in the input field</li>
 			<li>No letters or special characters accepted</li>
 			<li>Separate the numbers using a commma (,)</li>
@@ -22,8 +23,8 @@
 
 	<div id = "radioChoice">
 
-		BubbleSort :<input type="radio" name="userChoice" id="bubbleSortRadio"><br>
-		QuickSort  :<input type="radio" name="userChoice" id="quickSortRadio">	
+		BubbleSort :<input type="radio" name="userChoice" value="bubbleSortRadio" id = "bubbleSortRadio" ><br>
+		QuickSort  :<input type="radio" name="userChoice" value="quickSortRadio" id = "quickSortRadio">	
 		</div>
 
 	<div id = "userChoice"> 
@@ -32,7 +33,10 @@
 		<input type="submit" name="submit" id="submit" value="SUBMIT">	
 
 	</div>
-
+	<br>
+	<div id = "clear">
+	<input type="submit" name="clear" id = "clearResults" value="CLEAR">
+ 	</div>
 	<div id = "resultsDisplay">
 		
 	</div>
