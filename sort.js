@@ -22,50 +22,21 @@ $(document).ready(function(){
 		printResults("Numbers before Sort "+ numbers);
 		var input = $("#userInput").val("");
 
-		var startTime = 
-		
-
-		//check which radio button is selected using if statement to call function selected
-
-		// This was the alternative if statement code 
-		// $("input[name=userChoice]:radio").click(function () {
-  //       if ($('input[name=userChoice]:checked').val() == "bubbleSortRadio") {
-  //           	bubbleSort(numbers);
-		// 		printResults("Numbers After BubbleSort " + numbers);
-
-  //       }
-  //       else if ($('input[name=userChoice]:checked').val() == "quickSortRadio") {
-	 //            quickSort(numbers);
-		// 		printResults("Numbers After QuickSort " + numbers);
-
-  //       }
-  //       else
-		// 	{
-		// 		printResults("You need to select what type of sort you want to do");
-		// 	}
-		//     });
-		// });
+//check which radio button is selected using if statement to call function selected
 
 		if(($("#bubbleSortRadio").prop("checked"))===true)
-			{
+			{	
+				
 				bubbleSort(numbers);
 				printResults("Numbers After BubbleSort " + numbers);
 			 }
-
-		else(($("quickSortRadio").prop("checked"))===true)
+		else
 			{	
 				// swap(numbers);
 				quickSort(numbers);
 				printResults("Numbers After QuickSort " + numbers);
 			}
 
-		//I was trying to see if I can prevent a user from going on without clicking any radio button, dint work out
-		
-		// else
-		// 	{
-		// 		printResults("You need to select what type of sort you want to do");
-		// 	}
-		 		
 		//Showing the results in the HTML
 		function printResults(results)
 			{
