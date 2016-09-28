@@ -6,8 +6,6 @@ $(document).ready(function(){
 		// get the values from the input field
 		var input = $("#userInput").val();
 		var numbers = (input.split(','));
-		//making sure everything on the inout field is a number
-
 		var len = numbers.length;
 		//Turning the array from string to numbers
 		for (var i = 0; i < len; i++)
@@ -23,9 +21,13 @@ $(document).ready(function(){
 		}
 		printResults("Numbers before Sort "+ numbers);
 		var input = $("#userInput").val("");
+
+		var startTime = 
 		
 
 		//check which radio button is selected using if statement to call function selected
+
+		// This was the alternative if statement code 
 		// $("input[name=userChoice]:radio").click(function () {
   //       if ($('input[name=userChoice]:checked').val() == "bubbleSortRadio") {
   //           	bubbleSort(numbers);
@@ -43,6 +45,7 @@ $(document).ready(function(){
 		// 	}
 		//     });
 		// });
+
 		if(($("#bubbleSortRadio").prop("checked"))===true)
 			{
 				bubbleSort(numbers);
@@ -55,7 +58,9 @@ $(document).ready(function(){
 				quickSort(numbers);
 				printResults("Numbers After QuickSort " + numbers);
 			}
-		//I was trying to see if I can hinder a user from not clicking any radio button, dint work out
+
+		//I was trying to see if I can prevent a user from going on without clicking any radio button, dint work out
+		
 		// else
 		// 	{
 		// 		printResults("You need to select what type of sort you want to do");
@@ -70,9 +75,9 @@ $(document).ready(function(){
 
 		//Swap Function
 		function swap(numbers, firstIndex, secondIndex){
-		    var temp = numbers[firstIndex];
+		    var temp = numbers[firstIndex];//var to save a temporary number
 		    numbers[firstIndex] = numbers[secondIndex];
-		    numbers[secondIndex] = temp;
+		    numbers[secondIndex] = temp; //switching 
 		}
 		//BubbleSort Function
 		function bubbleSort(numbers)
@@ -93,10 +98,10 @@ $(document).ready(function(){
 		}
 		//QuickSort Function
 		function quickSort(numbers, left, right) {
-		  left = left || 0;
-		  right = right || len - 1;
+		  left = left || 0;//Index to start comparing with on the left side(first index of the array)
+		  right = right || len - 1;// Index to start comparing with on the right side(last index of the array)
 
-		  var pivot = partition(numbers, left, right);
+		  var pivot = partition(numbers, left, right);//calls the partition function
 
 		   if(left < pivot - 1) {
 			    quickSort(numbers, left, pivot - 1);
@@ -108,18 +113,18 @@ $(document).ready(function(){
 		}
 		//Partition for quicksort 
 		function partition(numbers, left, right) {
-		  var pivot = Math.floor((left + right) / 2 );
+		  var pivot = Math.floor((left + right) / 2 );//Setting the pivot
 
 		  while(left <= right) {
 		    while(numbers[left] < numbers[pivot]) {
-		      left++;
+		      left++;//moving to the next index
 		    }
 		    while(numbers[right] > numbers[pivot]) {
-		      right--;
+		      right--;//moving to the next index of the array
 		    }
 		    if(left <= right) {
-		      swap(numbers, left, right);
-		      left++;
+		      swap(numbers, left, right);//calls the sap function to do the switch
+		      left++;// this two increments are for making sure the left and right markers cross each other, in order to start over again
 		      right--;
 		    }
 		  }
@@ -128,6 +133,10 @@ $(document).ready(function(){
 
 		// console.log(quickSort(numbers.slice()));
 
+		//clearing the displayed items
+		$( "#clearResults" ).click(function() {
+  			$( "#resultsDisplay" ).empty();
+  		}); 
 		
 	});
 
